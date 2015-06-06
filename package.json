@@ -1,6 +1,6 @@
 {
   "name": "gaba-gulp",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Set of tasks for projects using angularjs",
   "main": "index.js",
   "scripts": {
