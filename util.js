@@ -4,7 +4,6 @@ module.exports = function() {
     var gulpHelpers = {
         logInfo: logInfo,
         logVerbose: logVerbose,
-        config: getConfig()
     };
     return gulpHelpers;
 
@@ -14,15 +13,5 @@ module.exports = function() {
 
     function logVerbose(msg) {
         gulp$.util.log(msg);
-    }
-
-    function getConfig() {
-        try {
-            require('../gulp.config.js')();
-        }
-        catch(ex) {
-            logVerbose('No config file found. Using default config.');
-            return require('./gulp.default.config.js')();
-        }
     }
 };

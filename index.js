@@ -1,10 +1,11 @@
 (function() {
+    var config = getConfig();
+
     module.exports = {
         allTasks: allTasks,
         compileTasks: compileTasks,
         watchTasks: watchTasks
     };
-
 
     function allTasks() {
         compileTasks();
@@ -12,10 +13,19 @@
     }
 
     function compileTasks() {
-        require('./compile.tasks.js');
+        require('./compile.tasks.js')(config);
     }
 
     function watchTasks() {
-        require('./watch.tasks.js');
+        require('./watch.tasks.js')(config);
+    }
+
+    function getConfig() {
+        try {
+            return require('../gulp.config.js')();
+        }
+        catch(ex) {
+            return require('./gulp.default.config.js')();
+        }
     }
 }());
