@@ -2,7 +2,7 @@
     var config = getConfig();
     var gulp = require('gulp');
     var gulp$ = require('gulp-load-plugins')({lazy: true});
-    var util = require('../util.js')();
+    var util = require('./util.js')();
 
     module.exports = {
         allTasks: allTasks,
