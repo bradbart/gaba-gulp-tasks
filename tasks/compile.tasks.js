@@ -1,5 +1,5 @@
 module.exports = function(gulp, gulp$, util, config) {
-    gulp.task('compile-less', function() {
+    gulp.task('compile:css', function() {
         util.logInfo('Compile LESS to CSS');
         return gulp.src(config.styles.less)
             .pipe(gulp$.plumber())
@@ -8,7 +8,16 @@ module.exports = function(gulp, gulp$, util, config) {
             .pipe(gulp.dest(config.styles.directory));
     });
 
-    gulp.task('wire-dep', function() {
+    gulp.task('compile:js', function() {
+        return gulp.src(config.js)
+            .pipe(gulp$.plumber())
+            .pipe(gulp$.jscs())
+            .pipe(gulp$.jshint())
+            .pipe(gulp$.jshint.reporter('jshint-stylish', {verbose: true}))
+            .pipe(gulp$.jshint.reporter('fail'));
+    });
+
+    gulp.task('compile:index', function() {
         util.logInfo('Inject dependencies into index.html');
         var wiredep = require('wiredep').stream;
         var injectSource = gulp.src(config.js.concat(config.styles.css), {read: false});
