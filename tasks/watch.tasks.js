@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var gulp$ = require('gulp-load-plugins')({lazy: true});
 var util = require('./util.js')();
 
-module.export = function(config) {
+module.exports = function(config) {
     gulp.task('watch-dev', ['watch-less', 'watch-new-js'], function() {
         util.logInfo('Set up watchers to facilitate development');
     });
