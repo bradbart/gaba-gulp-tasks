@@ -1,6 +1,6 @@
 {
   "name": "gaba-gulp-tasks",
-  "version": "2.0.2",
+  "version": "0.0.0",
   "description": "Set of tasks for projects using angularjs",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,16 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
     "gulp-inject": "^1.2.0",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
     "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^0.10.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-task-listing": "^1.0.0",
     "gulp-util": "^3.0.5",
     "gulp-watch": "^4.2.4",
+    "jshint-stylish": "^2.0.0",
     "wiredep": "^2.2.2"
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function(customOverrides) {
     var appRoot = './app/';
 
     var config = {
@@ -23,5 +23,16 @@ module.exports = function() {
         }
     };
 
-    return config;
+    return applyOverrides(config, customOverrides);
+
+    function applyOverrides(value, override) {
+        for(var i in value) {
+            if(override[i] && (typeof value[i] === 'object')) {
+                applyOverrides(value[i], override[i]);
+            } else if(override[i]) {
+                value[i] = override[i];
+            }
+        }
+        return value;
+    }
 };

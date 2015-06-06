@@ -4,9 +4,9 @@
     var util = require('./util.js')();
 
     var config = null; // set during initialization
-    console.log('This is a message');
     module.exports = function(customConfig) {
-        config = getConfig(customConfig);
+        config = require('./gulp.default.config.js')(customConfig || {});
+        gulp.task('gaba:help', gulp$.taskListing);
         return {
             allTasks: allTasks,
             compileTasks: compileTasks,
@@ -25,14 +25,5 @@
 
     function watchTasks() {
         require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
-    }
-
-    function getConfig(customConfig) {
-        if(customConfig) {
-            return customConfig;
-        }
-        else {
-            return require('./gulp.default.config.js')();
-        }
     }
 }());
