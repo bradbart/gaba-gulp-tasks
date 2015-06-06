@@ -1,4 +1,4 @@
-module.exports = function(gulp, gulp$, util, config) {
+module.exports = function watchTasks(gulp, gulp$, util, config) {
     gulp.task('watch:dev', ['watch:css', 'watch:js'], function() {
         util.logInfo('Set up watchers to facilitate development');
     });

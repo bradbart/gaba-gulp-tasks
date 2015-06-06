@@ -17,6 +17,7 @@
     function allTasks() {
         compileTasks();
         watchTasks();
+        testTasks();
     }
 
     function compileTasks() {
@@ -25,5 +26,9 @@
 
     function watchTasks() {
         require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
+    }
+
+    function testTasks() {
+        require('./tasks/test.tasks.js')(gulp, gulp$, util, config);
     }
 }());

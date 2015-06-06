@@ -1,4 +1,4 @@
-module.exports = function(gulp, gulp$, util, config) {
+module.exports = function compileTasks(gulp, gulp$, util, config) {
     gulp.task('compile:css', function() {
         util.logInfo('Compile LESS to CSS');
         return gulp.src(config.styles.less)
@@ -10,7 +10,6 @@ module.exports = function(gulp, gulp$, util, config) {
 
     gulp.task('compile:js', function() {
         return gulp.src(config.js)
-            .pipe(gulp$.plumber())
             .pipe(gulp$.jscs())
             .pipe(gulp$.jshint())
             .pipe(gulp$.jshint.reporter('jshint-stylish', {verbose: true}))

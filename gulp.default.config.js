@@ -20,6 +20,10 @@ module.exports = function(customOverrides) {
         /* Options for wiredep */
         wiredepOptions: {
             ignorePath: '..'
+        },
+
+        karma: {
+            configPath: './karma.conf.js'
         }
     };
 
