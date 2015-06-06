@@ -1,5 +1,5 @@
 {
-  "name": "gaba-gulp",
+  "name": "gaba-gulp-tasks",
   "version": "2.0.2",
   "description": "Set of tasks for projects using angularjs",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bradbart/gaba-gulp.git"
+    "url": "https://github.com/bradbart/gaba-gulp-tasks.git"
   },
   "author": "Brad Bartholomew <bradley.bartholomew@live.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bradbart/gaba-gulp/issues"
+    "url": "https://github.com/bradbart/gaba-gulp-tasks/issues"
   },
-  "homepage": "https://github.com/bradbart/gaba-gulp",
+  "homepage": "https://github.com/bradbart/gaba-gulp-tasks",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
