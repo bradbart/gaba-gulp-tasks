@@ -4,7 +4,7 @@
     var util = require('./util.js')();
 
     var config = null; // set during initialization
-
+    console.log('This is a message');
     module.exports = function(customConfig) {
         config = getConfig(customConfig);
         return {
