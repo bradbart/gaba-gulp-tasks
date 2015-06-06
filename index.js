@@ -5,8 +5,8 @@
 
     var config = null; // set during initialization
 
-    module.exports = function(config) {
-        config = getConfig(config);
+    module.exports = function(customConfig) {
+        config = getConfig(customConfig);
         return {
             allTasks: allTasks,
             compileTasks: compileTasks,
@@ -27,9 +27,9 @@
         require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
     }
 
-    function getConfig(override) {
-        if(override) {
-            return override;
+    function getConfig(customConfig) {
+        if(customConfig) {
+            return customConfig;
         }
         else {
             return require('./gulp.default.config.js')();
