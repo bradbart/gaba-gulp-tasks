@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var gulp$ = require('gulp-load-plugins')({lazy: true});
-var util = require('./util.js')();
+var util = require('../util.js')();
 
 module.exports = function(config) {
     gulp.task('watch-dev', ['watch-less', 'watch-new-js'], function() {
