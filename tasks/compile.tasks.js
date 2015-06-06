@@ -1,8 +1,4 @@
-var gulp = require('gulp');
-var gulp$ = require('gulp-load-plugins')({lazy: true});
-var util = require('../util.js')();
-
-module.exports = function(config) {
+module.exports = function(gulp, gulp$, util, config) {
     gulp.task('compile-less', function() {
         util.logInfo('Compile LESS to CSS');
         return gulp.src(config.styles.less)

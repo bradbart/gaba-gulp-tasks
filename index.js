@@ -1,5 +1,8 @@
 (function() {
     var config = getConfig();
+    var gulp = require('gulp');
+    var gulp$ = require('gulp-load-plugins')({lazy: true});
+    var util = require('../util.js')();
 
     module.exports = {
         allTasks: allTasks,
@@ -13,11 +16,11 @@
     }
 
     function compileTasks() {
-        require('./tasks/compile.tasks.js')(config);
+        require('./tasks/compile.tasks.js')(config, gulp, gulp$, util);
     }
 
     function watchTasks() {
-        require('./tasks/watch.tasks.js')(config);
+        require('./tasks/watch.tasks.js')(config, gulp, gulp$, util);
     }
 
     function getConfig() {
