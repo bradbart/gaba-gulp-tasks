@@ -1,13 +1,17 @@
 (function() {
-    var config = getConfig();
     var gulp = require('gulp');
     var gulp$ = require('gulp-load-plugins')({lazy: true});
     var util = require('./util.js')();
 
-    module.exports = {
-        allTasks: allTasks,
-        compileTasks: compileTasks,
-        watchTasks: watchTasks
+    var config = null; // set during initialization
+
+    module.exports = function(config) {
+        config = getConfig(config);
+        return {
+            allTasks: allTasks,
+            compileTasks: compileTasks,
+            watchTasks: watchTasks
+        };
     };
 
     function allTasks() {
@@ -23,11 +27,11 @@
         require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
     }
 
-    function getConfig() {
-        try {
-            return require('../../gulp.config.js')();
+    function getConfig(override) {
+        if(override) {
+            return override;
         }
-        catch(ex) {
+        else {
             return require('./gulp.default.config.js')();
         }
     }
