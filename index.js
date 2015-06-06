@@ -16,11 +16,11 @@
     }
 
     function compileTasks() {
-        require('./tasks/compile.tasks.js')(config, gulp, gulp$, util);
+        require('./tasks/compile.tasks.js')(gulp, gulp$, util, config);
     }
 
     function watchTasks() {
-        require('./tasks/watch.tasks.js')(config, gulp, gulp$, util);
+        require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
     }
 
     function getConfig() {
