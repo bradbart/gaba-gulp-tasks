@@ -1,6 +1,6 @@
 {
   "name": "gaba-gulp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set of tasks for projects using angularjs",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^0.10.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-util": "^3.0.5",
     "gulp-watch": "^4.2.4",
     "wiredep": "^2.2.2"
   }
