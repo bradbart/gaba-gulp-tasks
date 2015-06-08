@@ -1,6 +1,6 @@
 {
   "name": "gaba-gulp-tasks",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Set of tasks for projects using angularjs",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,5 @@
     "karma-phantomjs-launcher": "^0.2.0",
     "phantomjs": "^1.9.17"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }
