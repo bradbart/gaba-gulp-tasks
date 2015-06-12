@@ -6,15 +6,15 @@ module.exports = function(customOverrides) {
         appRoot: appRoot,
         index: appRoot + 'index.html',
         js: [
-            appRoot + 'scripts/**/*.module.js',
-            appRoot + 'scripts/**/*.js',
-            '!' + appRoot + 'scripts/**/*.spec.js',
+            appRoot + '**/*.module.js',
+            appRoot + '**/*.js',
+            '!' + appRoot + '**/*.spec.js',
         ],
         styles: {
-            css: appRoot + 'styles/app.css',
+            css: appRoot + 'app.css',
             compiledDest: 'app.css',
-            directory: appRoot + 'styles/',
-            less: appRoot + 'styles/app.less'
+            directory: appRoot,
+            less: appRoot + '**/*.less'
         },
 
         /* Options for wiredep */
