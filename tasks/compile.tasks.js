@@ -9,7 +9,7 @@ module.exports = function compileTasks(gulp, gulp$, util, config) {
     });
 
     gulp.task('compile:js', function() {
-        return gulp.src(config.js)
+        return gulp.src(config.alljs)
             .pipe(gulp$.jscs())
             .pipe(gulp$.jshint())
             .pipe(gulp$.jshint.reporter('jshint-stylish', {verbose: true}))

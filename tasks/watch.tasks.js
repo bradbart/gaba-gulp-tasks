@@ -10,7 +10,7 @@ module.exports = function watchTasks(gulp, gulp$, util, config) {
 
     gulp.task('watch:js', function() {
         util.logInfo('Watch for new and removed JS files and run "wire-dep"');
-        gulp.watch([config.js], ['test']);
+        gulp.watch([config.alljs], ['test']);
         gulp$.watch(config.js, { events: ['add', 'unlink']}, function () {
              gulp.start('compile:index');
        });

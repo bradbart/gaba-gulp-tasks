@@ -10,6 +10,10 @@ module.exports = function(customOverrides) {
             appRoot + '**/*.js',
             '!' + appRoot + '**/*.spec.js',
         ],
+        alljs: [
+            appRoot + '**/*.module.js',
+            appRoot + '**/*.js'
+        ],
         styles: {
             css: appRoot + 'app.css',
             compiledDest: 'app.css',
