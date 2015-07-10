@@ -22,6 +22,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config, del) {
             .pipe(cssFilter.restore())
             /* Optimize CSS files */
             .pipe(jsFilter)
+            .pipe(gulp$.ngAnnotate())
             .pipe(gulp$.uglify())
             .pipe(jsFilter.restore())
             /* Create distribution resources */
