@@ -2,6 +2,7 @@
     var gulp = require('gulp');
     var gulp$ = require('gulp-load-plugins')({lazy: true});
     var util = require('./util.js')();
+    var del = require('del'); 
 
     var config = null; // set during initialization
     module.exports = function(customConfig) {
@@ -35,6 +36,6 @@
     }
 
     function buildTasks() {
-        require('./tasks/build.tasks.js')(gulp, gulp$, util, config);
+        require('./tasks/build.tasks.js')(gulp, gulp$, util, config, del);
     }
 }());

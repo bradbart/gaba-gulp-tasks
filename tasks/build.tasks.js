@@ -1,4 +1,4 @@
-module.exports = function serveTasks(gulp, gulp$, util, config) {
+module.exports = function serveTasks(gulp, gulp$, util, config, del) {
     gulp.task('templatecache', function() {
         return gulp
             .src(config.html)
@@ -7,7 +7,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config) {
             }))
             .pipe(gulp.dest(config.appRoot));
     });
-    gulp.task('build', ['compile', 'templatecache'], function() {
+    gulp.task('build', ['compile', 'templatecache', 'clean'], function() {
         var assets = gulp$.useref.assets({searchPath: './'});
         var cssFilter = gulp$.filter('**/*.css');
         var jsFilter = gulp$.filter('**/*.js'); 
@@ -29,4 +29,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config) {
             .pipe(gulp$.useref())
             .pipe(gulp.dest(config.distRoot));
     });
+    gulp.task('clean', function(done) {
+        del(config.distRoot + '**/*.*', done); 
+    }); 
 };
