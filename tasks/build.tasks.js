@@ -10,6 +10,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config) {
     gulp.task('build', ['compile', 'templatecache'], function() {
         var assets = gulp$.useref.assets({searchPath: './'});
         var cssFilter = gulp$.filter('**/*.css');
+        var jsFilter = gulp$.filter('**/*.js'); 
         
         return gulp
             .src(config.index)
@@ -19,6 +20,10 @@ module.exports = function serveTasks(gulp, gulp$, util, config) {
             .pipe(cssFilter)
             .pipe(gulp$.csso())
             .pipe(cssFilter.restore())
+            /* Optimize CSS files */
+            .pipe(jsFilter)
+            .pipe(gulp$.uglify())
+            .pipe(jsFilter.restore())
             /* Create distribution resources */
             .pipe(assets.restore())
             .pipe(gulp$.useref())
