@@ -1,1 +1,5 @@
-require('../../index.js')({ karma: { configPath: __dirname + '/karma.conf.js' }}).allTasks();
+require('../../index.js')({
+    appModule: 'fakeApp',
+    karma: {
+        configPath: __dirname + '/karma.conf.js' }
+    }).allTasks();

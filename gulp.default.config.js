@@ -2,6 +2,12 @@ module.exports = function(customOverrides) {
     var appRoot = './app/';
 
     var config = {
+        /* Required */
+        appModule: '',
+        karma: {
+            configPath: './karma.conf.js'
+        },
+
         /* Client Side file paths */
         appRoot: appRoot,
         index: appRoot + 'index.html',
@@ -14,11 +20,15 @@ module.exports = function(customOverrides) {
             appRoot + '**/*.module.js',
             appRoot + '**/*.js'
         ],
+        html: [
+            appRoot + '**/*.html',
+            '!' + appRoot + 'index.html'
+        ],
         styles: {
             css: appRoot + 'app.css',
             compiledDest: 'app.css',
             directory: appRoot,
-            less: appRoot + '**/*.less'
+            less: appRoot + 'app.less'
         },
 
         /* Options for wiredep */
@@ -26,9 +36,8 @@ module.exports = function(customOverrides) {
             ignorePath: '..'
         },
 
-        karma: {
-            configPath: './karma.conf.js'
-        }
+        /* Distribution root */
+        distRoot: './public/'
     };
 
     return applyOverrides(config, customOverrides);

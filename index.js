@@ -10,7 +10,8 @@
         return {
             allTasks: allTasks,
             compileTasks: compileTasks,
-            watchTasks: watchTasks
+            watchTasks: watchTasks,
+            buildTasks: buildTasks
         };
     };
 
@@ -18,6 +19,7 @@
         compileTasks();
         watchTasks();
         testTasks();
+        buildTasks();
     }
 
     function compileTasks() {
@@ -30,5 +32,9 @@
 
     function testTasks() {
         require('./tasks/test.tasks.js')(gulp, gulp$, util, config);
+    }
+
+    function buildTasks() {
+        require('./tasks/build.tasks.js')(gulp, gulp$, util, config);
     }
 }());

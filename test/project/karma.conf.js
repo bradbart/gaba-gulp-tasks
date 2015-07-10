@@ -2,6 +2,7 @@
 // Generated on Sat Jun 06 2015 13:09:17 GMT-0700 (Pacific Daylight Time)
 
 module.exports = function(config) {
+  var bowerFiles = require('wiredep')({devDependencies: true})['js'];
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -14,9 +15,10 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
+    files: [].concat(
+      bowerFiles,
       'app/**/*.js'
-    ],
+    ),
 
 
     // list of files to exclude

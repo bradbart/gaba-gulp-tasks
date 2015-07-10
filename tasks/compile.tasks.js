@@ -9,7 +9,7 @@ module.exports = function compileTasks(gulp, gulp$, util, config) {
     });
 
     gulp.task('compile:js', function() {
-        return gulp.src(config.alljs)
+        return gulp.src([].concat(config.alljs, ['!' + config.appRoot + 'templates.js']))
             .pipe(gulp$.jscs())
             .pipe(gulp$.jshint())
             .pipe(gulp$.jshint.reporter('jshint-stylish', {verbose: true}))
@@ -25,6 +25,9 @@ module.exports = function compileTasks(gulp, gulp$, util, config) {
             .pipe(wiredep(config.wiredepOptions))
             .pipe(gulp$.inject(injectSource))
             .pipe(gulp.dest(config.appRoot));
+    });
+
+    gulp.task('compile', ['compile:js', 'compile:index', 'compile:css'], function() {
     });
 };
 

@@ -1,2 +1,4 @@
 node_modules/
 bower_components/
+test/project/public/
+test/project/app/templates.js
