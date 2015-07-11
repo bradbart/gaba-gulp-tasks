@@ -11,7 +11,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config, del) {
     gulp.task('build:fonts', function() {
         return gulp
             .src(config.fonts)
-            .pipe(gulp.dest(config.distRoot)); 
+            .pipe(gulp.dest(config.distRoot + 'fonts')); 
     }); 
     
     gulp.task('build', ['compile', 'build:templatecache'], function() {
