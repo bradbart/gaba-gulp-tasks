@@ -12,14 +12,15 @@
             allTasks: allTasks,
             compileTasks: compileTasks,
             watchTasks: watchTasks,
-            buildTasks: buildTasks
+            buildTasks: buildTasks,
+            runTasks: runTasks
         };
     };
 
     function allTasks() {
         compileTasks();
         watchTasks();
-        testTasks();
+        runTasks();
         buildTasks();
     }
 
@@ -31,8 +32,8 @@
         require('./tasks/watch.tasks.js')(gulp, gulp$, util, config);
     }
 
-    function testTasks() {
-        require('./tasks/test.tasks.js')(gulp, gulp$, util, config);
+    function runTasks() {
+        require('./tasks/run.tasks.js')(gulp, gulp$, util, config);
     }
 
     function buildTasks() {

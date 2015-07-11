@@ -1,5 +1,6 @@
 module.exports = function(customOverrides) {
     var appRoot = './app/';
+    var svcRoot = './svc/';
 
     var config = {
         /* Required */
@@ -37,7 +38,10 @@ module.exports = function(customOverrides) {
         },
 
         /* Distribution root */
-        distRoot: './public/'
+        distRoot: './public/',
+
+        /* Server side options */
+        serverEntry: svcRoot + 'index.js'
     };
 
     return applyOverrides(config, customOverrides);
