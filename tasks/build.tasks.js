@@ -20,7 +20,7 @@ module.exports = function serveTasks(gulp, gulp$, util, config, del) {
             .pipe(cssFilter)
             .pipe(gulp$.csso())
             .pipe(cssFilter.restore())
-            /* Optimize CSS files */
+            /* Optimize JS files */
             .pipe(jsFilter)
             .pipe(gulp$.ngAnnotate())
             .pipe(gulp$.uglify())
