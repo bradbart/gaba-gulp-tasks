@@ -31,6 +31,9 @@ module.exports = function(customOverrides) {
             directory: appRoot,
             less: appRoot + 'app.less'
         },
+        fonts: [
+            'bower_components/bootstrap/fonts/**/*.*'
+        ],
 
         /* Options for wiredep */
         wiredepOptions: {
