@@ -31,9 +31,8 @@ module.exports = function(customOverrides) {
             directory: appRoot,
             less: appRoot + 'app.less'
         },
-        fonts: [
-            'bower_components/bootstrap/fonts/**/*.*'
-        ],
+        fonts: [],
+        assets: [],
 
         /* Options for wiredep */
         wiredepOptions: {
@@ -51,7 +50,7 @@ module.exports = function(customOverrides) {
 
     function applyOverrides(value, override) {
         for(var i in value) {
-            if(override[i] && (typeof value[i] === 'object')) {
+            if(override[i] && (typeof value[i] === 'object' && !(value[i] instanceof Array))) {
                 applyOverrides(value[i], override[i]);
             } else if(override[i]) {
                 value[i] = override[i];
