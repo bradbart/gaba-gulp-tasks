@@ -13,8 +13,14 @@ module.exports = function serveTasks(gulp, gulp$, util, config, del) {
             .src(config.fonts)
             .pipe(gulp.dest(config.distRoot + 'fonts')); 
     }); 
+
+    gulp.task('build:assets', function() {
+        return gulp
+            .src(config.assets)
+            .pipe(gulp.dest(config.distRoot + 'assets')); 
+    }); 
     
-    gulp.task('build', ['compile', 'build:templatecache'], function() {
+    gulp.task('build', ['compile', 'build:templatecache', 'build:fonts', 'build:assets'], function() {
         var assets = gulp$.useref.assets({searchPath: './'});
         var cssFilter = gulp$.filter('**/*.css');
         var jsFilter = gulp$.filter('**/*.js'); 
