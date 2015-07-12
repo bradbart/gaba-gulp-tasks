@@ -1,5 +1,6 @@
 (function() {
-    var gulp = require('gulp');
+    var requirePeer = require('require-linked-peer'); 
+    var gulp = requirePeer('gulp');
     var gulp$ = require('gulp-load-plugins')({lazy: true});
     var util = require('./util.js')();
     var del = require('del'); 
