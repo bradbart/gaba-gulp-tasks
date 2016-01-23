@@ -1,12 +1,14 @@
 (function() {
-    var requirePeer = require('require-linked-peer'); 
-    var gulp = requirePeer('gulp');
     var gulp$ = require('gulp-load-plugins')({lazy: true});
     var util = require('./util.js')();
     var del = require('del'); 
 
-    var config = null; // set during initialization
-    module.exports = function(customConfig) {
+    // set during initialization
+    var config = null; 
+    var gulp = null; 
+    
+    module.exports = function(gulpInstance, customConfig) {
+        gulp = gulpInstance; 
         config = require('./gulp.default.config.js')(customConfig || {});
         gulp.task('gaba:help', gulp$.taskListing);
         return {
